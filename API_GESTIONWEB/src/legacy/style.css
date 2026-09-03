@@ -1,0 +1,625 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #e9f5e9;
+  color: #222;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #8ed28e, #b7e6b7);
+}
+
+.login-container h1 {
+  color: #0f4d0f;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.login-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-box input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.login-box button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+}
+
+.login-box button:hover {
+  background: #3e8e41;
+}
+
+#login-error {
+  color: red;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.menu {
+  background: #4caf50;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu-item,
+#logout-btn {
+  text-decoration: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.menu-item:hover,
+#logout-btn:hover {
+  background: #3e8e41;
+}
+
+
+#main-content {
+  text-align: center;
+  padding: 40px;
+  min-height: calc(100vh - 100px);
+}
+
+.titulo-central {
+  font-size: 2.5em;
+  color: #2e7d32;
+  margin-top: 50px;
+}
+
+/* ======== FORMULARIOS DE EMPLEADO ======== */
+.form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.form-container h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.form-container input {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.form-container button {
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.form-container button:hover {
+  background: #3e8e41;
+}
+
+/* ======== TABLA DE PROVEEDORES ======== */
+.tabla-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.tabla-container h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#tabla-empleados {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-empleados th,
+#tabla-empleados td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-empleados th {
+  background: #4caf50;
+  color: white;
+}
+
+#tabla-empleados tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ======== FORMULARIOS DE MAQUINARIA ======== */
+.maquinaria-section .form-container {
+ 
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.maquinaria-section .form-container h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.maquinaria-section .form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.maquinaria-section .form-container input {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.maquinaria-section .form-container button {
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.maquinaria-section .form-container button:hover {
+  background: #3e8e41;
+}
+
+/* ======== TABLAS DE MAQUINARIA ======== */
+.maquinaria-section .tabla-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.maquinaria-section .tabla-container h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#tabla-maquinaria {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-maquinaria th,
+#tabla-maquinaria td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-maquinaria th {
+  background: #4caf50;
+  color: white;
+}
+
+#tabla-maquinaria tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ======== FORMULARIOS DE PROVEEDORES ======== */
+.proveedores-section .form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.proveedores-section .form-container h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.proveedores-section .form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.proveedores-section .form-container input {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.proveedores-section .form-container button {
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.proveedores-section .form-container button:hover {
+  background: #3e8e41;
+}
+
+/* ======== TABLAS DE PROVEEDORES ======== */
+.proveedores-section .tabla-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 800px;
+  overflow-x: auto;
+}
+
+.proveedores-section .tabla-container h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#tabla-proveedores {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-proveedores th,
+#tabla-proveedores td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-proveedores th {
+  background: #4caf50;
+  color: white;
+}
+
+#tabla-proveedores tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ======== FORMULARIOS DE MOVIMIENTOS ======== */
+.movimientos-section .form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.movimientos-section .form-container h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.movimientos-section .form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.movimientos-section .form-container input {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.movimientos-section .form-container button {
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.movimientos-section .form-container button:hover {
+  background: #3e8e41;
+}
+
+/* ======== TABLAS DE MOVIMIENTOS ======== */
+.movimientos-section .tabla-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 1000px; 
+  overflow-x: auto;
+}
+
+.movimientos-section .tabla-container h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#tabla-movimientos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-movimientos th,
+#tabla-movimientos td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-movimientos th {
+  background: #4caf50;
+  color: white;
+}
+
+#tabla-movimientos tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ======== FORMULARIOS DE REPUESTOS ======== */
+.repuestos-section .form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.repuestos-section .form-container h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.repuestos-section .form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.repuestos-section .form-container input {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.repuestos-section .form-container button {
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.repuestos-section .form-container button:hover {
+  background: #3e8e41;
+}
+
+/* ======== TABLAS DE REPUESTOS ======== */
+.repuestos-section .tabla-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 900px;
+  overflow-x: auto;
+}
+
+.repuestos-section .tabla-container h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#tabla-repuestos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-repuestos th,
+#tabla-repuestos td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-repuestos th {
+  background: #4caf50;
+  color: white;
+}
+
+#tabla-repuestos tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ======== FORMULARIOS DE STOCK ======== */
+.stock-section .form-container {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+.stock-section .form-container h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.stock-section .form-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.stock-section .form-container input {
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.stock-section .form-container button {
+  width: 100%;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.stock-section .form-container button:hover {
+  background: #3e8e41;
+}
+
+/* ======== TABLAS DE STOCK ======== */
+.stock-section .tabla-container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 30px auto;
+  max-width: 600px;
+  overflow-x: auto;
+}
+
+.stock-section .tabla-container h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+#tabla-stock {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#tabla-stock th,
+#tabla-stock td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#tabla-stock th {
+  background: #4caf50;
+  color: white;
+}
+
+#tabla-stock tr:nth-child(even) {
+  background: #f2f2f2;
+}
