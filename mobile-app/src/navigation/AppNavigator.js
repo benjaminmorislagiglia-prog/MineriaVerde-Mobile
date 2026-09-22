@@ -9,12 +9,15 @@ import StockScreen from "../screens/StockScreen";
 import TasksScreen from "../screens/TasksScreen";
 import { colors } from "../theme/colors";
 
+//// Stack principal de navegacion entre pantallas.
 const Stack = createNativeStackNavigator();
 
+//// Define si se muestra Login o la app interna segun haya usuario activo.
 export default function AppNavigator() {
   const [user, setUser] = useState(null);
 
   return (
+    //// NavigationContainer habilita la navegacion en toda la aplicacion.
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{

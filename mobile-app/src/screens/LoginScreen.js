@@ -5,10 +5,12 @@ import Screen from "../components/Screen";
 import { mockUser } from "../data/mockData";
 import { colors } from "../theme/colors";
 
+//// Pantalla de ingreso con credenciales temporales para el MVP.
 export default function LoginScreen({ onLogin }) {
   const [username, setUsername] = useState("benjamin");
   const [password, setPassword] = useState("1234");
 
+  //// Valida el usuario de prueba y habilita el acceso a la app.
   function handleLogin() {
     const normalizedUser = username.trim().toLowerCase();
 
@@ -22,6 +24,7 @@ export default function LoginScreen({ onLogin }) {
 
   return (
     <Screen>
+      //// KeyboardAvoidingView ayuda a que el teclado no tape los campos.
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : undefined}
         style={styles.container}
@@ -61,6 +64,7 @@ export default function LoginScreen({ onLogin }) {
   );
 }
 
+//// Estilos de la pantalla de login.
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -1,5 +1,7 @@
+//// URL base de la API ASP.NET. En celular real debe cambiarse por la IP local de la PC.
 const API_BASE_URL = "http://localhost:51941/api";
 
+//// Funcion generica para consultar endpoints REST y reutilizar manejo de errores.
 async function request(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
     headers: {
@@ -18,6 +20,7 @@ async function request(path, options = {}) {
   return text ? JSON.parse(text) : null;
 }
 
+//// Metodos preparados para consumir datos reales desde la API.
 export const api = {
   baseUrl: API_BASE_URL,
   getStock: () => request("/Stock"),

@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import Screen from "../components/Screen";
 import { colors } from "../theme/colors";
 
+//// Pantalla de perfil con datos basicos del usuario logueado.
 export default function ProfileScreen({ user, onLogout }) {
   return (
     <Screen style={styles.screen}>
@@ -20,6 +21,7 @@ export default function ProfileScreen({ user, onLogout }) {
   );
 }
 
+//// Estilos del perfil.
 const styles = StyleSheet.create({
   screen: {
     padding: 20,

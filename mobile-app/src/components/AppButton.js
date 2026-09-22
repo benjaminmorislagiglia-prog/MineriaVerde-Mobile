@@ -1,10 +1,12 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 import { colors } from "../theme/colors";
 
+//// Boton reutilizable para acciones principales y secundarias.
 export default function AppButton({ title, onPress, variant = "primary", disabled }) {
   const isSecondary = variant === "secondary";
 
   return (
+    //// Pressable permite dar feedback visual cuando el usuario toca el boton.
     <Pressable
       disabled={disabled}
       onPress={onPress}
@@ -20,6 +22,7 @@ export default function AppButton({ title, onPress, variant = "primary", disable
   );
 }
 
+//// Estilos del boton reutilizable.
 const styles = StyleSheet.create({
   button: {
     minHeight: 48,

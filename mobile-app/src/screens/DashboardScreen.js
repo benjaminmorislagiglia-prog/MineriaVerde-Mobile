@@ -4,6 +4,7 @@ import Screen from "../components/Screen";
 import { tasks } from "../data/mockData";
 import { colors } from "../theme/colors";
 
+//// Accesos directos del panel inicial.
 const actions = [
   { title: "Tareas", detail: "Ordenes asignadas", route: "Tareas" },
   { title: "Stock", detail: "Materiales y repuestos", route: "Stock" },
@@ -11,6 +12,7 @@ const actions = [
   { title: "Perfil", detail: "Datos del usuario", route: "Perfil" },
 ];
 
+//// Pantalla de inicio con resumen y accesos principales.
 export default function DashboardScreen({ navigation, user }) {
   return (
     <Screen>
@@ -33,6 +35,7 @@ export default function DashboardScreen({ navigation, user }) {
         </View>
 
         <View style={styles.grid}>
+          //// Cada accion navega hacia una pantalla del MVP.
           {actions.map((action) => (
             <Pressable key={action.route} onPress={() => navigation.navigate(action.route)} style={styles.action}>
               <Text style={styles.actionTitle}>{action.title}</Text>
@@ -45,6 +48,7 @@ export default function DashboardScreen({ navigation, user }) {
   );
 }
 
+//// Estilos del dashboard.
 const styles = StyleSheet.create({
   content: {
     gap: 20,

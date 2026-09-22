@@ -1,3 +1,4 @@
+//// Paleta centralizada para mantener el mismo estilo en toda la app.
 export const colors = {
   background: "#F4F7F3",
   surface: "#FFFFFF",

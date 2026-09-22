@@ -1,9 +1,11 @@
+//// Usuario temporal para probar el login mientras no exista autenticacion real en la API.
 export const mockUser = {
   name: "Benjamin",
   role: "Supervisor",
   shift: "Turno manana",
 };
 
+//// Tareas de ejemplo para mostrar el flujo inicial de ordenes asignadas.
 export const tasks = [
   {
     id: "OT-1042",
@@ -28,6 +30,7 @@ export const tasks = [
   },
 ];
 
+//// Stock de respaldo cuando la app todavia no puede conectarse a la API.
 export const fallbackStock = [
   { Id: 1, Repuesto: "Filtro de aceite", Cantidad: 12, StockMinimo: 6 },
   { Id: 2, Repuesto: "Correa alternador", Cantidad: 4, StockMinimo: 5 },

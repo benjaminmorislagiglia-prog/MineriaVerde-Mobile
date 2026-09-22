@@ -5,9 +5,11 @@ import StatusPill from "../components/StatusPill";
 import { tasks } from "../data/mockData";
 import { colors } from "../theme/colors";
 
+//// Pantalla de listado de tareas asignadas al usuario.
 export default function TasksScreen() {
   return (
     <Screen>
+      //// FlatList renderiza listas de forma eficiente en mobile.
       <FlatList
         contentContainerStyle={styles.list}
         data={tasks}
@@ -28,6 +30,7 @@ export default function TasksScreen() {
   );
 }
 
+//// Estilos del listado de tareas.
 const styles = StyleSheet.create({
   list: {
     gap: 12,

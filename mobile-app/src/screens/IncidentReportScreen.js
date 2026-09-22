@@ -6,11 +6,13 @@ import Card from "../components/Card";
 import Screen from "../components/Screen";
 import { colors } from "../theme/colors";
 
+//// Pantalla para registrar incidentes con descripcion y foto.
 export default function IncidentReportScreen() {
   const [description, setDescription] = useState("");
   const [machine, setMachine] = useState("");
   const [photo, setPhoto] = useState(null);
 
+  //// Abre la galeria del celular para adjuntar evidencia del incidente.
   async function pickPhoto() {
     const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
@@ -30,6 +32,7 @@ export default function IncidentReportScreen() {
     }
   }
 
+  //// Valida los datos minimos antes de preparar el reporte.
   function submitReport() {
     if (!machine.trim() || !description.trim()) {
       Alert.alert("Faltan datos", "Completa maquinaria y descripcion antes de enviar.");
@@ -76,6 +79,7 @@ export default function IncidentReportScreen() {
   );
 }
 
+//// Estilos del formulario de incidente.
 const styles = StyleSheet.create({
   content: {
     padding: 20,

@@ -7,11 +7,13 @@ import { fallbackStock } from "../data/mockData";
 import { api } from "../services/api";
 import { colors } from "../theme/colors";
 
+//// Pantalla de consulta de materiales y stock.
 export default function StockScreen() {
   const [items, setItems] = useState(fallbackStock);
   const [loading, setLoading] = useState(false);
   const [apiMessage, setApiMessage] = useState("Datos de ejemplo hasta conectar con la API desde el celular.");
 
+  //// Intenta cargar stock real desde la API; si falla usa datos de ejemplo.
   async function loadStock() {
     setLoading(true);
     try {
@@ -31,6 +33,7 @@ export default function StockScreen() {
 
   return (
     <Screen>
+      //// Permite actualizar el stock deslizando hacia abajo.
       <FlatList
         ListHeaderComponent={<Text style={styles.helper}>{apiMessage}</Text>}
         contentContainerStyle={styles.list}
@@ -38,6 +41,7 @@ export default function StockScreen() {
         keyExtractor={(item, index) => String(item.Id ?? item.IdStock ?? index)}
         refreshControl={<RefreshControl refreshing={loading} onRefresh={loadStock} />}
         renderItem={({ item }) => {
+          //// Normaliza nombres de campos por si la API devuelve propiedades distintas.
           const cantidad = Number(item.Cantidad ?? item.CantidadActual ?? item.StockActual ?? 0);
           const minimo = Number(item.StockMinimo ?? item.Stock_Minimo ?? 0);
           const lowStock = minimo > 0 && cantidad < minimo;
@@ -58,6 +62,7 @@ export default function StockScreen() {
   );
 }
 
+//// Estilos de la pantalla de stock.
 const styles = StyleSheet.create({
   list: {
     gap: 12,

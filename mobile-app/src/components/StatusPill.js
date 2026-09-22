@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../theme/colors";
 
+//// Colores para mostrar prioridad o estado de forma visual.
 const toneStyles = {
   Alta: { backgroundColor: "#FEE4E2", color: colors.danger },
   Media: { backgroundColor: "#FEF0C7", color: colors.warning },
@@ -10,6 +11,7 @@ const toneStyles = {
   Programada: { backgroundColor: "#ECE9FE", color: "#5925DC" },
 };
 
+//// Etiqueta pequena para estados como Alta, Pendiente o En proceso.
 export default function StatusPill({ label }) {
   const tone = toneStyles[label] ?? { backgroundColor: colors.surfaceMuted, color: colors.textMuted };
 
@@ -20,6 +22,7 @@ export default function StatusPill({ label }) {
   );
 }
 
+//// Estilos del indicador de estado.
 const styles = StyleSheet.create({
   pill: {
     alignSelf: "flex-start",
